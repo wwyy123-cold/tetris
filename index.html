@@ -915,9 +915,9 @@
     if (!action) return;
     e.preventDefault();
 
-    // 未开始时：空格/回车直接开局
+    // 未开始 / 已结束时：空格、回车、R 直接开局
     if (!started || gameOver) {
-      if (e.code === 'Space' || e.code === 'Enter') startGame();
+      if (e.code === 'Space' || e.code === 'Enter' || e.code === 'KeyR') startGame();
       return;
     }
     if (paused && e.code !== 'KeyP' && e.code !== 'Escape') return;
